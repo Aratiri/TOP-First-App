@@ -6,7 +6,15 @@ ruby '2.6.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+# Deleted the line above for deploy using Heroku and add the lines below
+group :development, :test do
+  gem 'sqlite3' , '~> 1.3.13'
+end
+ 
+group :production do
+   gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
